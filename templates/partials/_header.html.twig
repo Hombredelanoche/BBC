@@ -1,0 +1,41 @@
+
+<header class='d-flex flex-wrap justify-content-center p-20'>
+    
+       <nav class='content flex-fill d-flex flex-wrap align-items-center'>
+            <a href=" {{asset('/')}} "><img class='logo' src=" {{ asset('pictures/LOGO_J.png') }} "></a>   
+            <div class="header-search p-10 flex-fill">
+                    <ul class='nav-content d-flex flex-wrap justify-content-center'>
+                        <li class='p-20'>    
+                        
+                        <a class='nav-elem' href=" {{path('homepage')}} ">
+                        <i class="fa-solid fa-house pr-5">
+                        </i>Homepage</a>    
+                        
+                        </li>
+
+                        <li class='p-20'>   
+                        
+                        <a class='nav-elem' href=" {{path('planning')}} ">
+                        <i class="fa-solid fa-calendar pr-5"></i> 
+                        Planning</a>    
+                        
+                        </li>
+
+                        <li class='p-20'>   
+                        
+                        <a class='nav-elem' href=" {{path('actuality')}} ">
+                        <i class="fa-solid fa-book-open pr-5"></i>
+                        Actualité</a>   
+                        </li>
+                    </ul>
+            </div>
+            <div class="header-search p-20 justify-content-between">
+                    <button class="btn btn-primary">
+                    <a class='btn-nav' href="{{path('register')}} ">Inscription</a>
+                    </button>
+                    <button class="btn btn-primary-stroke">
+                    <a class='btn-nav' href=" {{path('login')}} ">Connexion</a>
+                    </button>
+            </div>
+       </nav>
+</header>

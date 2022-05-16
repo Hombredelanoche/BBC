@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      {% block title %}
+        Braganza Boxing Camp |
+      {% endblock %}
+    </title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>" />
+    <script defer src="{{ asset('js/script.js') }}"></script>
+    <script defer src="https://kit.fontawesome.com/48ac769759.js" crossorigin="anonymous"></script>
+    {% block stylesheet %}
+      <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous" />
+    {% endblock %}
+  </head>
+  <body class="content d-flex flex-column">
+    {% include 'partials/_header.html.twig' %}
+    <div class="justify-content-center flex-fill d-flex flex-wrap">
+      <div class="justify-content-between d-flex flex-row-nowrap">
+        {% include 'partials/_navBar.html.twig' %}
+
+        <div class="">
+          {% block body %}
+          <main class='d-flex'>
+             <section class='motivation-content flex-column'>
+                <div class='motivation-text m-20'>Courage</div>
+                <div class='motivation-text m-20'>Combativité</div>
+                <div class='motivation-text m-20'>Percévérance</div>
+                <div class='motivation-text m-20'>Humilité</div>
+             </section>
+             
+             <section class='block-pics'>
+                <div>
+                <img src="{{asset('pictures/Jm_boxe.jpg')}}"  alt="Jm_home_pic" class='Jm_home_pic'>
+                </div>
+             </section>
+          </main>
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+
+    {% include 'partials/_footer.html.twig' %}
+  </body>
+</html>

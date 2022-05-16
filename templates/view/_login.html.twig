@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter{% endblock %}
+
+{% block body %}
+
+
+<h1 class='t_log mb-20'>Se connecter</h1>
+
+<div class='block mb-20'>      
+    
+    {{form_start(log)}}
+    
+    
+    {{form_rest(log)}}
+
+</div>
+
+    <button class='btn btn-primary'>Connexion</button>
+
+{{form_end(log)}}
+
+{% endblock %}
