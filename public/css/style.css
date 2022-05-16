@@ -189,6 +189,11 @@ i {
     margin: 100px;
     height: 600px;
 }
+
+.boxer {
+    width: 500px;
+    margin: 100px;
+}
 /* NavBar(header) */
 
 
@@ -228,4 +233,28 @@ i {
     color: var(--primary-light);
 }
 
+
+/* Register */
+
+main .register-block {
+    background-color: var(--gray-dark);
+    padding-top: 200px;
+    width: 400px;
+    height: auto;
+}
+
+.register-block div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-block div label {
+    text-align: center;
+}
+
+.register-block form input {
+    border: var(--border-radius);
+    width: 200px;
+}
 
