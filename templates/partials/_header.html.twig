@@ -1,11 +1,10 @@
-
-<header class='d-flex flex-wrap justify-content-center p-20'>
+<header>
     
-       <nav class='content flex-fill d-flex flex-wrap align-items-center'>
+       <nav>
             <a href=" {{asset('/')}} "><img class='logo' src=" {{ asset('pictures/LOGO_J.png') }} "></a>   
-            <div class="header-search p-10 flex-fill">
-                    <ul class='nav-content d-flex flex-wrap justify-content-center'>
-                        <li class='p-20'>    
+            <div class='nav-list'>
+                    <ul class='nav-content'>
+                        <li>    
                         
                         <a class='nav-elem' href=" {{path('homepage')}} ">
                         <i class="fa-solid fa-house pr-5">
@@ -29,12 +28,12 @@
                         </li>
                     </ul>
             </div>
-            <div class="header-search p-20 justify-content-between">
+            <div class="log-reg">
                     <button class="btn btn-primary">
-                    <a class='btn-nav' href="{{path('register')}} ">Inscription</a>
+                    <a href="{{path('register')}} ">Inscription</a>
                     </button>
                     <button class="btn btn-primary-stroke">
-                    <a class='btn-nav' href=" {{path('login')}} ">Connexion</a>
+                    <a href=" {{path('login')}} ">Connexion</a>
                     </button>
             </div>
        </nav>

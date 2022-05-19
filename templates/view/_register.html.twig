@@ -3,20 +3,20 @@
 {% block title %}Hello RegisterController!{% endblock %}
 
 {% block body %}
-<main class='d-flex'>
+<main class='register-main d-flex '>
 
 
 <section class='register-block'>
-<h1 class='t_log mb-20'>S'inscrire</h1>
+<h1 class='t_register mb-20'>S'inscrire</h1>
 
-<div>
+<div class=''>
     {{form_start(inscription)}}
 
 
     {{form_rest(inscription)}}
 </div>
 
-
+    <button class='btn btn-primary btn-register'>Valider</button>
     {{form_end(inscription)}}
 </section>
 

@@ -1,11 +1,39 @@
 {% extends "base.html.twig" %}
 
+{% block title %}
+        {{parent()}} Planning
+{% endblock %}
+
+
+{% block stylesheets %}
+        {{parent()}}
+        <link rel="stylesheet" href=" {{asset('css/calendar.css')}} ">
+{% endblock %}
+
+
 
 
 
 {% block body %}
-        <main class='containerR'>
-        <br>
-        <a href=" {{path('index')}} ">Back to the main menu</a>
-        </main>
+        <div id="calendrier"></div>
+
+
+
+
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+{% block script %}
+{{parent()}}
+<script src=" {{asset('js/myPlanning.js')}} "></script>
+{% endblock %}       
+
+

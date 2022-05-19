@@ -30,19 +30,18 @@ html body {
     color: var(--primary-light);
 }
 
-header {
-    background-color: var(--primary);
-}
 
-footer {
-    background-color: var(--primary-light);
-    color: var(--color);
-}
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 ul {
@@ -62,199 +61,132 @@ i {
     color: var(--color);
 }
 
+button {
+    color: var(--color);
+}
+
+footer {
+    display: flex;
+    background-color: var(--primary-light);
+    color: var(--color);
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+/* Accueil */
+
 .block {
-    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 0px;
     border-radius: var(--border-radius);
     background-color: var(--color);
     box-shadow: var(--box-shadow);
 }
 
-/* flex */
-
-.d-flex {
-    display: flex;
-}
-
-.flex-wrap {
-    flex-flow: wrap;
-}
-
-.flex-row-nowrap {
-    flex-flow: row nowrap;
-}
-
-.flex-column {
-    flex-direction: column;
-}
-
-.align-items-center {
-    align-items: center;
-}
-
-.align-items-end {
-    align-items: flex-end;
-}
-
-.justify-content-between {
-    justify-content: space-between;
-}
-
-.justify-content-center {
-    justify-content: center;
-  }
-  
-.justify-content-end {
-    justify-content: flex-end;
-  }
-  
-.flex-fill {
-    flex: 1;
-  }
-
-  /* margin */
-
-.m-5 {
-    margin: 5px;
-  }
-  
-.m-10 {
-    margin: 10px;
-  }
-  
-.m-20 {
-    margin: 20px;
-  }
-
-.mr-5 {
-    margin-right: 5px;
-}
-
-.mr-10 {
-    margin-right: 10px;
-}
-
-.mr-15 {
-    margin-right: 15px;
-}
-
-.mr-20 {
-    margin-right: 20px;
-}
-
-.mr-300 {
-    margin-right: 300px;
-}
-
-.mb-20 {
-    margin-bottom: 20px;
-}
-
-  /* padding */
-
-.p-5 {
-    padding: 5px;
-  }
-  
-.p-10 {
-    padding: 10px;
-  }
-  
-.p-20 {
-    padding: 20px;
-  }
-
-.pr-5 {
-    padding-right: 5px;
-}
-
-.pr-10 {
-    padding-right: 10px;
-}
-
-.pr-15 {
-    padding-right: 15px;
-}
-
-/* Logo & pictures */
-
-.block-pics {
-    background-color: var(--gray-dark);
-}
-
-.logo {
-    width: 150px;
-}
-
-.Jm_home_pic {
-    margin: 100px;
-    height: 600px;
-}
-
-.boxer {
-    width: 500px;
-    margin: 100px;
-}
-/* NavBar(header) */
-
-
-.nav-content .nav-elem{
-    color: var(--color);
-    text-decoration: none;
-}
-
-.btn .btn-nav {
-    text-decoration: none;
-    color: var(--color);
-}
-
-
-/* Body */
-
-/* Base */
-
-
 .motivation-content {
-    display: flex;
-    background-color: var(--gray-dark);
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    width: 350px;
+    background-color: var(--gray);
+}
+
+.block .motivation-content .motivation-text {
+    padding: 125px;
+    font-size: 45px; 
 }
 
 .motivation-text {
-    color: var(--primary);
+    color: var(--gray-light);
     opacity: 35%;
-    font-size: 35px;
 }
 
-/* Log */
-
-.t_log {
-    color: var(--primary-light);
-}
-
-
-/* Register */
-
-main .register-block {
-    background-color: var(--gray-dark);
-    padding-top: 200px;
-    width: 400px;
-    height: auto;
-}
-
-.register-block div {
+.text-content {
     display: flex;
     flex-direction: column;
+    width: 525px;
+}
+
+.text-content h1, h2, h3{
+    margin-top: 10px;
+    justify-content: center;
+    color: var(--primary);
+}
+
+.text-content h1 {
+   justify-content: center;
+}
+
+.text-content .container {
+    display: flex;
+}
+
+/* Header Navbar */
+
+header {
+    background-color: var(--primary);
+}
+
+.nav-list {
+    padding-top: 15px ;
+}
+
+.logo {
+    padding-left: 120px;
+    width: 350px;
+    margin: 10px;
+}
+
+nav {
+    display: flex;
+    border-radius: var(--border-radius);
+    justify-content: space-between;
     align-items: center;
 }
 
-.register-block div label {
-    text-align: center;
+nav .nav-content {
+    display: flex;
 }
 
-.register-block form input {
-    border: var(--border-radius);
-    width: 200px;
+nav .nav-content li {
+   margin-right: 100px;
 }
 
+nav .nav-content li .nav-elem {
+    text-decoration: none;
+    color: var(--color);
+    font-size: 18px;
+}
+
+i {
+    margin: 5px ;
+}
+
+.log-reg {
+    padding-right: 20px;
+}
+
+.log-reg a {
+    color: var(--color);
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 18px;
+}
+
+.btn-primary {
+    background-color: var(--secondary);
+}
+
+
+/* Login */
+
+.log_menu {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.log_menu .block-log {
+    background-color: var(--secondary);
+}
