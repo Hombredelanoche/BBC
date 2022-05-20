@@ -2,32 +2,32 @@
 
 namespace App\Repository;
 
-use App\Entity\Logs;
+use App\Entity\Planning;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Logs>
+ * @extends ServiceEntityRepository<Planning>
  *
- * @method Logs|null find($id, $lockMode = null, $lockVersion = null)
- * @method Logs|null findOneBy(array $criteria, array $orderBy = null)
- * @method Logs[]    findAll()
- * @method Logs[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Planning|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Planning|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Planning[]    findAll()
+ * @method Planning[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class LogsRepository extends ServiceEntityRepository
+class PlanningRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Logs::class);
+        parent::__construct($registry, Planning::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Logs $entity, bool $flush = true): void
+    public function add(Planning $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -39,7 +39,7 @@ class LogsRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(Logs $entity, bool $flush = true): void
+    public function remove(Planning $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -48,15 +48,15 @@ class LogsRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Logs[] Returns an array of Logs objects
+    //  * @return Planning[] Returns an array of Planning objects
     //  */
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('l')
-            ->andWhere('l.exampleField = :val')
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('l.id', 'ASC')
+            ->orderBy('p.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -65,10 +65,10 @@ class LogsRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Logs
+    public function findOneBySomeField($value): ?Planning
     {
-        return $this->createQueryBuilder('l')
-            ->andWhere('l.exampleField = :val')
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()

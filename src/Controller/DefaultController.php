@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-
+use App\Repository\PlanningRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,8 +20,28 @@ class DefaultController extends AbstractController
     }
 
     #[Route('/planning', name: 'planning')]
-    public function planning(): Response {
-        return $this->render('view/_planning.html.twig');
+    public function planning(PlanningRepository $planning): Response {
+        
+        $events = $planning->findAll();
+        
+        $rdvs = [];
+
+        foreach($events as $event){
+            $rdvs[] = [
+                'id' => $event->getId(),
+                'title' => $event->getTitle(),
+                'debut' => $event->getDebut()->format('Y-m-d H:i:s'),
+                'fin' => $event->getFin()->format('Y-m-d H:i:s'),
+                'description' => $event->getDescription(),
+                'allDay' => $event->getAllDay(),
+                'background-color' => $event->getBackgroundColor(),
+                'text-color' => $event->getTextColor(),
+                'border-color' => $event->getBorderColor()
+            ];
+        }
+        $data = json_encode($rdvs);
+        
+        return $this->render('view/_planning.html.twig', compact('data'));
     }
 
     #[Route('/actuality', name: 'actuality')]
@@ -29,6 +49,11 @@ class DefaultController extends AbstractController
         return $this->render('view/_actuality.html.twig');
     }
 
+    #[Route('/login', name: 'login')]
+    public function log(): Response
+    {
+        return $this->render('view/_login.html.twig');
+    }
 
 
 

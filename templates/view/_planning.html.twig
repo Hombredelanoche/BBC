@@ -23,17 +23,26 @@
 {% endblock %}
 
 
-
-
-
-
-
-
-
-
 {% block script %}
 {{parent()}}
-<script src=" {{asset('js/myPlanning.js')}} "></script>
-{% endblock %}       
+<script>
+window.onload = () => {
+    let calendarElt = document.querySelector('#calendrier');
 
-
+    let calendar = new FullCalendar.Calendar(calendarElt, {
+        initialView: 'dayGridMonth',
+        locale: 'fr',
+        timeZone: 'Europe/Paris',
+        selectable: true,
+        headerToolbar : {
+            start : 'prev',
+            center : 'title',
+            end : 'next'
+        },
+        events: {{ data|raw }},
+        contentHeight: 600
+    });
+    calendar.render();
+}
+</script>
+{% endblock %}
