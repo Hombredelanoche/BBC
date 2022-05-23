@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Form\SignInType;
+use App\Form\TodoArticlesType;
 use App\Repository\PlanningRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,9 +16,7 @@ class DefaultController extends AbstractController
     #[Route('/', name: 'index' )]
     #[Route('/accueil', name: 'homepage')]
     public function index(Request $request): Response {
-
-        $request = random_int(1,100);
-        return $this->render('base.html.twig', ['Request' => $request]);
+        return $this->render('base.html.twig');
     }
 
     #[Route('/planning', name: 'planning')]
@@ -45,14 +45,34 @@ class DefaultController extends AbstractController
     }
 
     #[Route('/actuality', name: 'actuality')]
-    public function actu(): Response {
-        return $this->render('view/_actuality.html.twig');
+    public function actu(Request $request): Response {
+
+        $createTodo = $this->createForm(TodoArticlesType::class);
+
+        $createTodo->handleRequest($request);
+
+        if($createTodo->isSubmitted() && $createTodo->isValid()){
+            dump($createTodo->getData());
+        }
+
+        return $this->render('view/_actuality.html.twig', [ 
+            'todo' => $createTodo->createView()]);
     }
 
     #[Route('/login', name: 'login')]
-    public function log(): Response
+    public function log(Request $request): Response
     {
-        return $this->render('view/_login.html.twig');
+        $log = $this->createForm(SignInType::class);
+
+        $log->handleRequest($request);
+
+        if($log->isSubmitted() && $log->isValid()){
+            dump($log->getData());
+        }
+
+        return $this->render('view/_login.html.twig', [
+            'logElem' => $log->createView()
+        ]);
     }
 
 

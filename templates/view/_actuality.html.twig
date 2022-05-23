@@ -1,5 +1,26 @@
 {% extends "base.html.twig" %}
+{% block stylesheets %}
+    <link rel="stylesheet" href=" {{asset('css/extraNavBar.css')}} ">
+{% endblock %}
+
+{% block extraNavBar %}
+        <div class='extraNav'>
+            {% include 'partials/_navBar.html.twig' %}
+        </div>
+{% endblock %}
+
 
 {% block body %}
-Içi vous trouverez les actualités du CAMP d'entrainement ainsi que des différentes compétitions organisées
+    <section class='main-content'>
+        <div class='content'>
+
+        {{form_start(todo)}}
+
+        {{form_rest(todo)}}
+        </div>
+    
+    
+    </section>
+
+        {{form_end(todo)}}
 {% endblock %}

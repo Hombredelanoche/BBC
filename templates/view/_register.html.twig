@@ -1,29 +1,23 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Hello RegisterController!{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href=" {{asset('css/signIn.css')}} ">
+{% endblock %}
+{% block title %}S'enregistrer{% endblock %}
 
 {% block body %}
-<main class='register-main d-flex '>
+
+<section class='log_menu'>
+<h1 class='logTitle'>S'inscrire</h1>
+
+<div class='block-log'>   
+{{form_start(inscription)}}
 
 
-<section class='register-block'>
-<h1 class='t_register mb-20'>S'inscrire</h1>
 
-<div class=''>
-    {{form_start(inscription)}}
-
-
-    {{form_rest(inscription)}}
-</div>
-
-    <button class='btn btn-primary btn-register'>Valider</button>
-    {{form_end(inscription)}}
+{{form_rest(inscription)}}
+   
+  
+{{form_end(inscription)}}
 </section>
 
-<section class='register-picture'>
-<div>
-<img src=" {{asset('pictures/register_pics.jpeg')}} "  class='boxer' alt="Welcome to the BBC">
-</div>
-</section>
-</main>
 {% endblock %}

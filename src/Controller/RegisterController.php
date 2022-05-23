@@ -13,16 +13,16 @@ class RegisterController extends AbstractController
     #[Route('/register', name: 'register')]
     public function register(Request $request): Response
     {
-        $Register = $this->createForm(RegisterType::class);
+        $register = $this->createForm(RegisterType::class);
 
-        $Register->handleRequest($request);
+        $register->handleRequest($request);
 
-        if($Register->isSubmitted() && $Register->isValid()){
-            dump($Register->getData());
+        if($register->isSubmitted() && $register->isValid()){
+            dump($register->getData());
         }
         
         return $this->render('view/_register.html.twig', [
-            'inscription' => $Register->createView()
+            'inscription' => $register->createView()
         ]);
     }
 }

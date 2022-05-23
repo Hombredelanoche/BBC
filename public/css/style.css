@@ -178,15 +178,28 @@ i {
     background-color: var(--secondary);
 }
 
-
-/* Login */
-
-.log_menu {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+.nav-button {
+    width: 125px;
+    height: 45px;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary);
 }
 
-.log_menu .block-log {
+.nav-button:hover {
+    transition: 0.4s;
     background-color: var(--secondary);
+    color: var(--warning);
+    width: 140px;
+    height: 55px;
+}
+
+.nav-button a {
+    color: var(--color);
+    text-decoration-color: none;
+}
+
+.nav-button a:hover {
+    font-size: 20px;
+    color: var(--primary);
 }

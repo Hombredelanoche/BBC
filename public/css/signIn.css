@@ -1,0 +1,100 @@
+:root {
+    --primary:#040404;
+    --primary-light: #4b4b4b;
+    --secondary:#fff200;
+    --secondary-dark:#f6b93b;
+    --warning:#eb2f06;
+    --success:#38ada9;
+    --box-shadow:0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    --border:1px solid var(--gray-light);
+    --border-radius: 3px;
+    --color:white;
+    --color-dark:#0c2461;
+    --gray:#f1f2f6;
+    --gray-dark:#dfe4ea;
+    --font-size-small:14px;
+    --font-size-regular:16px;
+    --font-weight-regular:400;
+    --font-weight-semi-bold:600;
+    --font-weight-bold:700;
+    --max-width: 1200px;
+}
+
+.log_menu {
+    width: 40%;
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.log_menu .logTitle {
+    color: var(--primary);
+    margin: 20px;
+    margin-bottom: 50px;
+    border-bottom: solid 5px var(--secondary);
+    font-style: italic;
+}
+.log_menu .block-log {
+    background-color: var(--secondary);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.block-log {
+    width: auto;
+    margin-bottom: 250px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.block-log form {
+    margin: auto;
+}
+
+.block-log form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.block-log form div label {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary);
+    margin-top: 10px;
+}
+
+.block-log form div input {
+    width: 500px;
+    height: 50px;
+    font-size: 25px;
+    align-items: center;
+    margin: 20px;
+}
+
+#sign_in_Connexion {
+    width: 125px;
+    height: 50px;
+    border-radius: var(--border-radius);
+    background-color: var(--warning);
+    border: none;
+    margin-bottom: 15px;
+}
+
+.required #register_Date_of_birth {
+    display: flex;
+    flex-direction: none;
+}
+
+#register_valider {
+    width: 125px;
+    height: 50px;
+    border-radius: var(--border-radius);
+    background-color: var(--warning);
+    border: none;
+    margin-bottom: 15px;
+}

@@ -25,6 +25,21 @@ class Users
     #[ORM\Column(type: 'string', length: 100)]
     private $password;
 
+    #[ORM\Column(type: 'date')]
+    private $birthday;
+
+    #[ORM\Column(type: 'string', length: 150)]
+    private $adress;
+
+    #[ORM\Column(type: 'string', length: 50)]
+    private $mobile_number;
+
+    #[ORM\Column(type: 'string', length: 100)]
+    private $Country;
+
+    #[ORM\Column(type: 'string', length: 100)]
+    private $City;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +89,67 @@ class Users
     public function setPassword(string $password): self
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    public function getBirthday(): ?\DateTimeInterface
+    {
+        return $this->birthday;
+    }
+
+    public function setBirthday(\DateTimeInterface $birthday): self
+    {
+        $this->birthday = $birthday;
+
+        return $this;
+    }
+
+    public function getAdress(): ?string
+    {
+        return $this->adress;
+    }
+
+    public function setAdress(string $adress): self
+    {
+        $this->adress = $adress;
+
+        return $this;
+    }
+
+    public function getMobileNumber(): ?string
+    {
+        return $this->mobile_number;
+    }
+
+    public function setMobileNumber(?string $mobile_number): self
+    {
+        $this->mobile_number = $mobile_number;
+
+        return $this;
+    }
+
+   
+    public function getCountry(): ?string
+    {
+        return $this->Country;
+    }
+
+    public function setCountry(string $Country): self
+    {
+        $this->Country = $Country;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->City;
+    }
+
+    public function setCity(string $City): self
+    {
+        $this->City = $City;
 
         return $this;
     }
