@@ -2,13 +2,17 @@
 
 namespace App\Controller;
 
-use App\Form\SignInType;
+use App\Entity\Registration;
+use App\Entity\TodoArticles;
+use App\Form\RegistrationType;
 use App\Form\TodoArticlesType;
 use App\Repository\PlanningRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
 
 class DefaultController extends AbstractController 
 {
@@ -47,42 +51,55 @@ class DefaultController extends AbstractController
     #[Route('/actuality', name: 'actuality')]
     public function actu(Request $request): Response {
 
+        $article = new TodoArticles;
+
         $createTodo = $this->createForm(TodoArticlesType::class);
 
         $createTodo->handleRequest($request);
 
         if($createTodo->isSubmitted() && $createTodo->isValid()){
-            dump($createTodo->getData());
+            // $EntityManager->persist($article);
+            // $EntityManager->flush();
+            dump($article);die;
         }
 
         return $this->render('view/_actuality.html.twig', [ 
             'todo' => $createTodo->createView()]);
     }
 
+
+
+
+
     #[Route('/login', name: 'login')]
     public function log(Request $request): Response
     {
-        $log = $this->createForm(SignInType::class);
+       
 
-        $log->handleRequest($request);
-
-        if($log->isSubmitted() && $log->isValid()){
-            dump($log->getData());
-        }
-
-        return $this->render('view/_login.html.twig', [
-            'logElem' => $log->createView()
-        ]);
+        return $this->render('view/_login.html.twig');
     }
 
 
+    
+    #[Route("/register", name: "register")]
+    #[Route("/register/{id}/edit", name:'user_edit')]
+    public function register(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $user = new Registration;
 
+        $userForm = $this->createForm(RegistrationType::class, $user);
 
-
-
-
-
-}
+        $userForm->handleRequest($request);
+        if($userForm->isSubmitted() && $userForm->isValid()) {
+            $entityManager->persist($user);
+            $entityManager->flush();
+        }
+          
+        return $this->render('view/_registration.html.twig', [
+            'inscription' => $userForm->createView()
+        ]);
+    }
+};
 
 
 ?>

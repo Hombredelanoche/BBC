@@ -4,7 +4,7 @@ namespace App\Form;
 
 use App\Entity\TodoArticles;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,9 +16,12 @@ class TodoArticlesType extends AbstractType
     {
         $builder
             ->add('title', TextType::class)
+            ->add('pictures', FileType::class, [
+                'required' => false
+            ])
             ->add('content', TextType::class)
-            ->add('creation', DateTimeType::class)
-            ->add('pictures', FileType::class)
+            ->add('creation', DateType::class)
+            
         ;
     }
 

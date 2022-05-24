@@ -20,8 +20,11 @@
     --max-width: 1200px;
 }
 
+
+/* PAGE & TITRE */
+
 .log_menu {
-    width: 40%;
+    width: auto;
     margin: auto;
     margin-bottom: 20px;
     display: flex;
@@ -37,22 +40,20 @@
     font-style: italic;
 }
 .log_menu .block-log {
-    background-color: var(--secondary);
+    background-color: var(--color);
     border-radius: 10px;
     box-shadow: var(--box-shadow);
 }
 
 .block-log {
-    width: auto;
-    margin-bottom: 250px;
+    width: 800px;
     height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin-bottom: 50px;
 }
 
-.block-log form {
+.block-log {
     margin: auto;
+    padding: 20px;
 }
 
 .block-log form div {
@@ -61,40 +62,24 @@
     align-items: center;
 }
 
-.block-log form div label {
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--primary);
-    margin-top: 10px;
-}
-
-.block-log form div input {
-    width: 500px;
-    height: 50px;
-    font-size: 25px;
-    align-items: center;
-    margin: 20px;
-}
-
-#sign_in_Connexion {
-    width: 125px;
-    height: 50px;
-    border-radius: var(--border-radius);
-    background-color: var(--warning);
-    border: none;
+.block-log form div input, select {
     margin-bottom: 15px;
+    width: 300px;
 }
 
-.required #register_Date_of_birth {
-    display: flex;
-    flex-direction: none;
-}
 
-#register_valider {
+
+
+
+/* BOUTON */
+
+
+.submitRegist {
     width: 125px;
     height: 50px;
     border-radius: var(--border-radius);
-    background-color: var(--warning);
+    background-color: var(--secondary);
+    color: var(--primary);
     border: none;
     margin-bottom: 15px;
 }

@@ -1,6 +1,7 @@
 {% extends "base.html.twig" %}
 {% block stylesheets %}
     <link rel="stylesheet" href=" {{asset('css/extraNavBar.css')}} ">
+    <link rel="stylesheet" href=" {{asset('css/actuality.css')}} ">
 {% endblock %}
 
 {% block extraNavBar %}
@@ -12,14 +13,15 @@
 
 {% block body %}
     <section class='main-content'>
+        {{form_start(todo)}}
         <div class='content'>
 
-        {{form_start(todo)}}
+        
 
         {{form_rest(todo)}}
         </div>
     
-    
+        <button type='submit' class='submitTodo'> Créer </button>
     </section>
 
         {{form_end(todo)}}
