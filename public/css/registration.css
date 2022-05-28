@@ -46,14 +46,11 @@
 }
 
 .block-log {
+    margin: auto;
+    margin-bottom: 100px;
+    padding: 20px;
     width: 800px;
     height: auto;
-    margin-bottom: 50px;
-}
-
-.block-log {
-    margin: auto;
-    padding: 20px;
 }
 
 .block-log form div {
@@ -64,15 +61,30 @@
 
 .block-log form div input, select {
     margin-bottom: 15px;
-    width: 300px;
+    padding: 10px 15px;
+    border: 0;
+    border-radius: var(--border-radius);
+    background-color: #f1f2f6;
+    text-align: center;
 }
 
+.block-log .home div{
+    display: flex;
+}
 
+.profil #registration_date_de_naissance, #registration_genre{
+    width: 240px; 
+}
 
-
+.home  #registration_pays {
+    width: 240px;
+}
 
 /* BOUTON */
 
+.block-log .btn-sub {
+    align-items: flex-end;
+}
 
 .submitRegist {
     width: 125px;

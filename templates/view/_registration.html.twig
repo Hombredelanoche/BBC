@@ -18,42 +18,63 @@
         <div>
             {{ form_label(inscription.nom) }}
             {{ form_widget(inscription.nom) }}
+            {{form_errors(inscription.nom)}}
 
             {{ form_label(inscription.prenom) }}
             {{ form_widget(inscription.prenom) }}
+            {{form_errors(inscription.prenom)}}
+
 
             {{ form_label(inscription.genre) }}
             {{ form_widget(inscription.genre) }}
+            {{form_errors(inscription.genre)}}
+
         
             {{ form_label(inscription.date_de_naissance) }}
             {{ form_widget(inscription.date_de_naissance) }}
+            {{form_errors(inscription.date_de_naissance)}}
+
         </div>
         <div>
             {{ form_label(inscription.photo) }}
             {{ form_widget(inscription.photo) }}
+            {{form_errors(inscription.photo)}}
+
         </div>
     </div>
     <div class="logInfo">
         <h2>Vos identifiants</h2>
         {{ form_label(inscription.email) }}
         {{ form_widget(inscription.email) }}
+        {{form_errors(inscription.email)}}
+
 
         {{ form_label(inscription.mot_de_passe) }}
         {{ form_widget(inscription.mot_de_passe) }}
+        {{form_errors(inscription.mot_de_passe)}}
+
     </div>
     <div class="home">
         <h2>Informations complémentaires</h2>
         {{ form_label(inscription.pays) }}
         {{ form_widget(inscription.pays) }}
+        {{form_errors(inscription.pays)}}
+
     
         {{ form_label(inscription.ville) }}
         {{ form_widget(inscription.ville) }}
+        {{form_errors(inscription.ville)}}
+
 
         {{ form_label(inscription.code_postal) }}
         {{ form_widget(inscription.code_postal) }}
+        {{form_errors(inscription.code_postal)}}
+
 
         {{ form_label(inscription.adresse) }}
         {{ form_widget(inscription.adresse) }}
+        {{form_errors(inscription.adresse)}}
+
     </div>
 
 

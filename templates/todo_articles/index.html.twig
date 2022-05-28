@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TodoArticles index{% endblock %}
+
+{% block body %}
+    <h1>TodoArticles index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Creation</th>
+                <th>Pictures</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for todo_article in todo_articles %}
+            <tr>
+                <td>{{ todo_article.id }}</td>
+                <td>{{ todo_article.title }}</td>
+                <td>{{ todo_article.content }}</td>
+                <td>{{ todo_article.creation ? todo_article.creation|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ todo_article.pictures }}</td>
+                <td>
+                    <a href="{{ path('app_todo_articles_show', {'id': todo_article.id}) }}">show</a>
+                    <a href="{{ path('app_todo_articles_edit', {'id': todo_article.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_todo_articles_new') }}">Create new</a>
+{% endblock %}

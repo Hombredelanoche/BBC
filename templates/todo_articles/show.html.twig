@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TodoArticles{% endblock %}
+
+{% block body %}
+    <h1>TodoArticles</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ todo_article.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ todo_article.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ todo_article.content }}</td>
+            </tr>
+            <tr>
+                <th>Creation</th>
+                <td>{{ todo_article.creation ? todo_article.creation|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Pictures</th>
+                <td>{{ todo_article.pictures }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_todo_articles_index') }}">back to list</a>
+
+    <a href="{{ path('app_todo_articles_edit', {'id': todo_article.id}) }}">edit</a>
+
+    {{ include('todo_articles/_delete_form.html.twig') }}
+{% endblock %}

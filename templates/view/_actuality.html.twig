@@ -1,28 +1,29 @@
 {% extends "base.html.twig" %}
+
 {% block stylesheets %}
-    <link rel="stylesheet" href=" {{asset('css/extraNavBar.css')}} ">
-    <link rel="stylesheet" href=" {{asset('css/actuality.css')}} ">
+<link rel="stylesheet" href=" {{asset('actuality.css')}} ">
 {% endblock %}
 
-{% block extraNavBar %}
-        <div class='extraNav'>
-            {% include 'partials/_navBar.html.twig' %}
-        </div>
-{% endblock %}
+
 
 
 {% block body %}
+
+
     <section class='main-content'>
-        {{form_start(todo)}}
-        <div class='content'>
+        <h1 class='logTitle'>S'inscrire</h1>
+            <div class='block-log'>   
 
         
 
-        {{form_rest(todo)}}
-        </div>
-    
-        <button type='submit' class='submitTodo'> Créer </button>
-    </section>
 
-        {{form_end(todo)}}
+
+
+       
+    
+
+
+</div>
+</section>
+      
 {% endblock %}

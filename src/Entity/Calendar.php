@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\PlanningRepository;
+use App\Repository\CalendarRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: PlanningRepository::class)]
-class Planning
+#[ORM\Entity(repositoryClass: CalendarRepository::class)]
+class Calendar
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -17,10 +17,10 @@ class Planning
     private $title;
 
     #[ORM\Column(type: 'datetime')]
-    private $debut;
+    private $start;
 
     #[ORM\Column(type: 'datetime')]
-    private $fin;
+    private $end;
 
     #[ORM\Column(type: 'text')]
     private $description;
@@ -28,13 +28,13 @@ class Planning
     #[ORM\Column(type: 'boolean')]
     private $all_day;
 
-    #[ORM\Column(type: 'string', length: 15)]
+    #[ORM\Column(type: 'string', length: 7)]
     private $background_color;
 
-    #[ORM\Column(type: 'string', length: 15)]
+    #[ORM\Column(type: 'string', length: 7)]
     private $border_color;
 
-    #[ORM\Column(type: 'string', length: 15)]
+    #[ORM\Column(type: 'string', length: 7)]
     private $text_color;
 
     public function getId(): ?int
@@ -54,26 +54,26 @@ class Planning
         return $this;
     }
 
-    public function getDebut(): ?\DateTimeInterface
+    public function getStart(): ?\DateTimeInterface
     {
-        return $this->debut;
+        return $this->start;
     }
 
-    public function setDebut(\DateTimeInterface $debut): self
+    public function setStart(\DateTimeInterface $start): self
     {
-        $this->debut = $debut;
+        $this->start = $start;
 
         return $this;
     }
 
-    public function getFin(): ?\DateTimeInterface
+    public function getEnd(): ?\DateTimeInterface
     {
-        return $this->fin;
+        return $this->end;
     }
 
-    public function setFin(\DateTimeInterface $fin): self
+    public function setEnd(\DateTimeInterface $end): self
     {
-        $this->fin = $fin;
+        $this->end = $end;
 
         return $this;
     }
