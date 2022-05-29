@@ -2,16 +2,11 @@
 
 namespace App\Controller;
 
-use App\Entity\Registration;
-use App\Entity\TodoArticles;
-use App\Form\RegistrationType;
-use App\Form\TodoArticlesType;
+
 use App\Repository\CalendarRepository;
-use App\Repository\PlanningRepository;
-use Doctrine\ORM\EntityManagerInterface;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -21,7 +16,7 @@ class DefaultController extends AbstractController
 
     #[Route('/', name: 'index' )]
     #[Route('/accueil', name: 'homepage')]
-    public function index(Request $request): Response {
+    public function index(): Response {
         return $this->render('base.html.twig');
     }
 
@@ -50,50 +45,8 @@ class DefaultController extends AbstractController
     }
     
     #[Route('/actuality', name: 'actuality')]
-    public function actu(Request $request, EntityManagerInterface $entityManager): Response {
-
-
-        
-        
+    public function actu(): Response {    
         return $this->render('view/_actuality.html.twig');
-    }
-
-
-
-
-
-    #[Route('/login', name: 'login')]
-    public function log(Request $request): Response
-    {
-       
-
-        return $this->render('view/_login.html.twig');
-    }
-
-
-    
-    #[Route("/register", name: "register")]
-    #[Route("/register/{id}/edit", name:'user_edit')]
-    public function register(Request $request, EntityManagerInterface $entityManager, RequestStack $requestStack): Response
-    {
-        $session = $requestStack->getSession();
-        
-        
-
-        $user = new Registration;
-
-        $userForm = $this->createForm(RegistrationType::class, $user);
-
-        $userForm->handleRequest($request);
-        if($userForm->isSubmitted() && $userForm->isValid()) {
-            $entityManager->persist($user);
-            $entityManager->flush();
-            $this->addFlash('enregistrer', 'Merci ! Vous avez bien été enregistré !');
-        }
-          
-        return $this->render('view/_registration.html.twig', [
-            'inscription' => $userForm->createView()
-        ]);
     }
 };
 

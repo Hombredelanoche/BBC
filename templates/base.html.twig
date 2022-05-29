@@ -51,29 +51,23 @@
                   <article class='container'>
               
                     <div>
-                        <h2>Qui-suis-je</h2>
-
-                        <article>
-                          <table>
-                            <thead>
-                              <tr>
-                                <th></th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                              <td>The table body</td>
-                              <td>with two columns</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </article>
-                      
-
-                     
+                        <p> Passionné par la boxe depuis mon adolecense, j'ai effectué mes premiers combats junior en 2009 où j'ai pu prendre la troisième marche du podium des championnats de France Pré-Combats.
+                    Cela fut le début d'une grande aventure dans le monde amateur où j'ai pu participé au Ceinture Montana, devenir Champion de France Amateur en 2014, 
+                    vice Champion de France en 2015, faire plusieur déplacements à l'étranger avec l'Equipe de France et des clubs.
+                          </p>
+                          <p>
+                    Mais suite à une blessure à l'oeil, j'ai du prendre la décision d'arrêter ma carrière pour faire attention à ma santé. 
+                    "Le combat continura toujours, mais ailleur"
+                    
+                     </p>
                     </div>
                    
+                    <div>
+                    <p>
+                    Aujourd'hui étant diplomé d'un D
                     
+                    </p>
+                    </div>
                    
                     <div class='container'>
                       <h2></h2>
@@ -91,8 +85,9 @@
 
              <section class='block-pics'>
                 <div>
-                <img src="{{asset('pictures/Jm_boxe.jpg')}}"  alt="Jm_home_pic" class='Jm_home_pic'>
+                <img src="{{asset('pictures/Jm_boxe.jpg')}}"  alt="Jm_home_pic" class='homePics'>
                 </div>
+                
              </section>
           </main>
           {% endblock %}
@@ -102,7 +97,7 @@
                   <div class="flash flash-{{cat}}"> {{message}} </div>
                 {% endfor %}
             {% endfor %}
-    {% include 'partials/_footer.html.twig' %}
+        {% include 'partials/_footer.html.twig' %}
 
 
 

@@ -102,24 +102,23 @@ footer {
     opacity: 35%;
 }
 
-.text-content {
-    display: flex;
-    flex-direction: column;
-    width: 525px;
+.text-content { 
+    align-items: center;
 }
 
 .text-content h1, h2, h3{
-    margin-top: 10px;
-    justify-content: center;
     color: var(--primary);
 }
 
 .text-content h1 {
-   justify-content: center;
+   margin: 100px;
+   padding: 0%;
 }
 
 .text-content .container {
     display: flex;
+    flex-direction: column;
+    padding: 0px;
 }
 
 /* Header Navbar */
@@ -203,3 +202,7 @@ i {
     font-size: 20px;
     color: var(--primary);
 }
+
+
+
+

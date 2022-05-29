@@ -308,6 +308,18 @@
     "symfony/intl": {
         "version": "v6.0.8"
     },
+    "symfony/lock": {
+        "version": "6.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.2",
+            "ref": "a1c8800e40ae735206bb14586fdd6c4630a51b8d"
+        },
+        "files": [
+            "./config/packages/lock.yaml"
+        ]
+    },
     "symfony/maker-bundle": {
         "version": "1.38",
         "recipe": {
@@ -362,6 +374,9 @@
     "symfony/proxy-manager-bridge": {
         "version": "v6.0.6"
     },
+    "symfony/rate-limiter": {
+        "version": "v6.0.9"
+    },
     "symfony/routing": {
         "version": "6.0",
         "recipe": {
@@ -407,6 +422,19 @@
     },
     "symfony/string": {
         "version": "v6.0.3"
+    },
+    "symfony/translation": {
+        "version": "6.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.3",
+            "ref": "da64f5a2b6d96f5dc24914517c0350a5f91dee43"
+        },
+        "files": [
+            "./config/packages/translation.yaml",
+            "./translations/.gitignore"
+        ]
     },
     "symfony/translation-contracts": {
         "version": "v3.0.1"

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}| S'enregistrer{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href=" {{asset('css/enregistrement&connexion')}} ">
+{% endblock %}
+
+
+{% block body %}
+
+{{form_start(form)}}
+
+
+{{form_rest(form)}}
+
+<button>S'inscrire</button>
+{{form_end(form)}}
+
+{% endblock %}
