@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserProfilRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -47,6 +49,14 @@ class UserProfil implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $picture;
+
+    #[ORM\OneToMany(mappedBy: 'author', targetEntity: TodoArticle::class)]
+    private $todoArticles;
+
+    public function __construct()
+    {
+        $this->todoArticles = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -210,6 +220,36 @@ class UserProfil implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPicture(?string $picture): self
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, TodoArticle>
+     */
+    public function getTodoArticles(): Collection
+    {
+        return $this->todoArticles;
+    }
+
+    public function addTodoArticle(TodoArticle $todoArticle): self
+    {
+        if (!$this->todoArticles->contains($todoArticle)) {
+            $this->todoArticles[] = $todoArticle;
+            $todoArticle->setAuthor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTodoArticle(TodoArticle $todoArticle): self
+    {
+        if ($this->todoArticles->removeElement($todoArticle)) {
+            // set the owning side to null (unless already changed)
+            if ($todoArticle->getAuthor() === $this) {
+                $todoArticle->setAuthor(null);
+            }
+        }
 
         return $this;
     }

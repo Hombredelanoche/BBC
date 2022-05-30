@@ -2,32 +2,32 @@
 
 namespace App\Repository;
 
-use App\Entity\TodoArticles;
+use App\Entity\TodoArticle;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<TodoArticles>
+ * @extends ServiceEntityRepository<TodoArticle>
  *
- * @method TodoArticles|null find($id, $lockMode = null, $lockVersion = null)
- * @method TodoArticles|null findOneBy(array $criteria, array $orderBy = null)
- * @method TodoArticles[]    findAll()
- * @method TodoArticles[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method TodoArticle|null find($id, $lockMode = null, $lockVersion = null)
+ * @method TodoArticle|null findOneBy(array $criteria, array $orderBy = null)
+ * @method TodoArticle[]    findAll()
+ * @method TodoArticle[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TodoArticlesRepository extends ServiceEntityRepository
+class TodoArticleRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, TodoArticles::class);
+        parent::__construct($registry, TodoArticle::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(TodoArticles $entity, bool $flush = true): void
+    public function add(TodoArticle $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -39,7 +39,7 @@ class TodoArticlesRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(TodoArticles $entity, bool $flush = true): void
+    public function remove(TodoArticle $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -48,7 +48,7 @@ class TodoArticlesRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return TodoArticles[] Returns an array of TodoArticles objects
+    //  * @return TodoArticle[] Returns an array of TodoArticle objects
     //  */
     /*
     public function findByExampleField($value)
@@ -65,7 +65,7 @@ class TodoArticlesRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?TodoArticles
+    public function findOneBySomeField($value): ?TodoArticle
     {
         return $this->createQueryBuilder('t')
             ->andWhere('t.exampleField = :val')

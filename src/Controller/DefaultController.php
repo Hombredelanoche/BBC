@@ -43,11 +43,6 @@ class DefaultController extends AbstractController
         $data = json_encode($rdvs);
         return $this->render('view/_planning.html.twig', compact('data'));
     }
-    
-    #[Route('/actuality', name: 'actuality')]
-    public function actu(): Response {    
-        return $this->render('view/_actuality.html.twig');
-    }
 };
 
 

@@ -4,18 +4,24 @@
 {% block title %}| S'enregistrer{% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href=" {{asset('css/enregistrement&connexion')}} ">
+{{parent()}}
+<link rel="stylesheet" href=" {{asset('css/regist&log.css')}} ">
 {% endblock %}
 
 
 {% block body %}
+<section class='form-block'>
+    <article class='form-container'>
+            <h1>Inscription</h1>
+                <div class='container'>
+                    {{form_start(form)}}
 
-{{form_start(form)}}
 
+                    {{form_rest(form)}}
 
-{{form_rest(form)}}
-
-<button>S'inscrire</button>
-{{form_end(form)}}
-
+                    <button>S'inscrire</button>
+                    {{form_end(form)}}
+                </div>
+    </article>
+</section>
 {% endblock %}

@@ -30,7 +30,7 @@
 
 {% block extraNavBar %}{% endblock %}
         
-       <section class='main-block'>
+       
           {% block body %}
 
           <main class='block'>
@@ -87,8 +87,9 @@
                              
              </section>
           </main>
+     
           {% endblock %}
-          </section>
+         
             {% for cat,list in app.flashes %}
                 {% for message in list %}
                   <div class="flash flash-{{cat}}"> {{message}} </div>

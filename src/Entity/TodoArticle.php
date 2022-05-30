@@ -2,28 +2,32 @@
 
 namespace App\Entity;
 
-use App\Repository\TodoArticlesRepository;
+use App\Repository\TodoArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: TodoArticlesRepository::class)]
-class TodoArticles
+#[ORM\Entity(repositoryClass: TodoArticleRepository::class)]
+class TodoArticle
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 100)]
+    #[ORM\Column(type: 'string', length: 150)]
     private $title;
+
+    #[ORM\Column(type: 'date')]
+    private $date;
 
     #[ORM\Column(type: 'text')]
     private $content;
 
-    #[ORM\Column(type: 'datetime')]
-    private $creation;
-
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $pictures;
+
+    #[ORM\ManyToOne(targetEntity: UserProfil::class, inversedBy: 'todoArticles')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $author;
 
     public function getId(): ?int
     {
@@ -42,6 +46,18 @@ class TodoArticles
         return $this;
     }
 
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
     public function getContent(): ?string
     {
         return $this->content;
@@ -54,18 +70,6 @@ class TodoArticles
         return $this;
     }
 
-    public function getCreation(): ?\DateTimeInterface
-    {
-        return $this->creation;
-    }
-
-    public function setCreation(\DateTimeInterface $creation): self
-    {
-        $this->creation = $creation;
-
-        return $this;
-    }
-
     public function getPictures(): ?string
     {
         return $this->pictures;
@@ -74,6 +78,18 @@ class TodoArticles
     public function setPictures(?string $pictures): self
     {
         $this->pictures = $pictures;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?UserProfil
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?UserProfil $author): self
+    {
+        $this->author = $author;
 
         return $this;
     }

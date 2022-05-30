@@ -50,7 +50,7 @@ class UserProfilType extends AbstractType
             ->add('city', TextType::class, [
                 'label' => 'Ville'
             ])
-            ->add('postalCode', IntegerType::class, [
+            ->add('postalCode', TextType::class, [
                 'label' => 'Code postal'
             ])
             ->add('picture', FileType::class, [

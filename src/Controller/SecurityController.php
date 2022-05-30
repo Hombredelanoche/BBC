@@ -30,7 +30,7 @@ class SecurityController extends AbstractController
             $user->setPassword($passwordHasher->hashPassword($user, $user->getPassword()));
             $em->persist($user);
             $em->flush();
-            $this->redirectToRoute('index');
+            $this->redirectToRoute('homepage');
         }
 
 
@@ -44,7 +44,7 @@ class SecurityController extends AbstractController
     {
         $error = $authenticationUtils->getLastAuthenticationError();
         $username = $authenticationUtils->getLastUsername();
-        
+        $this->redirectToRoute('homepage');
        
 
         return $this->render('security/_connexion.html.twig', [
