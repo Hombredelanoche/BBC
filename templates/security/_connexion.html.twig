@@ -29,7 +29,9 @@
 <label>
     <input type="checkbox" name="_remember_me"> Se souvenir de moi.
 </label>
-
+<div>
+<input type="hidden" nom='_csrf_token' value=' {{csrf_token('authenticate')}} '>
+</div>
 </div>
 <button>Connexion</button>
 </form>

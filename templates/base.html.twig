@@ -30,68 +30,65 @@
 
 {% block extraNavBar %}{% endblock %}
         
-       
+       <section class='main-block'>
           {% block body %}
 
           <main class='block'>
+
              <section class='motivation-content'>
-                <div class='motivation-text'>Courage</div>
-                <div class='motivation-text'>Combativité</div>
-                <div class='motivation-text'>Percévérance</div>
-                <div class='motivation-text'>Humilité</div>
+                <div class='motivation-text ft-40'>Courage</div>
+                <div class='motivation-text ft-40'>Combativité</div>
+                <div class='motivation-text ft-40'>Percévérance</div>
+                <div class='motivation-text ft-40'>Humilité</div>
              </section>
              
-
-
-            <section class='text-content'>
-             
+            <section class='motivation-content'>
                 <h1>Présentation</h1>
-             
+                    <div class='motivation-text'>
+                        <p> 
+                        Passionné par la boxe depuis mon adolécense, j'ai effectué mes premiers combats junior en 2009 où j'ai pu prendre la troisième marche du podium des championnats de France Pré-Combats.
+                        Cela fut le début d'une grande aventure où j'ai pu participé au Ceinture Montana, devenir Champion de France Amateur en 2014, 
+                        vice Champion de France en 2015, faire plusieur déplacements à l'étranger avec l'Equipe de France.
+                        </p>
+                        <p>
+                        Mais suite à une blessure à l'oeil, j'ai pris la décision d'arrêté la boxe pour des raisons de santé. <p> Le combat continuera ailleurs mais toujours. </p>                
+                        </p>
 
-                  <article class='container'>
-              
-                    <div>
-                        <p> Passionné par la boxe depuis mon adolecense, j'ai effectué mes premiers combats junior en 2009 où j'ai pu prendre la troisième marche du podium des championnats de France Pré-Combats.
-                    Cela fut le début d'une grande aventure dans le monde amateur où j'ai pu participé au Ceinture Montana, devenir Champion de France Amateur en 2014, 
-                    vice Champion de France en 2015, faire plusieur déplacements à l'étranger avec l'Equipe de France et des clubs.
-                          </p>
-                          <p>
-                    Mais suite à une blessure à l'oeil, j'ai du prendre la décision d'arrêter ma carrière pour faire attention à ma santé. 
-                    "Le combat continura toujours, mais ailleur"
-                    
-                     </p>
+                        <p>
+                        
+                        </p>
                     </div>
                    
-                    <div>
-                    <p>
-                    Aujourd'hui étant diplomé d'un D
-                    
-                    </p>
+                    <div class='motivation-text'>         
+                    <p> 
+                        Aujourd'hui diplômé d'un DEJEPS et devenu coach sportif spécialisé dans la boxe anglaise. J'enseigne dans différente structures et pour tous les niveaux.
+                        Mon objectif étant de partager mes connaissances techniques, tactiques, physiques afin de vous faire progrésser à travers un suivis rigoureux et continue.    
+                    </p>       
                     </div>
-                   
-                    <div class='container'>
-                      <h2></h2>
 
-
-                    </div>
-                    </article>
-
-            
-            
+                  
             </section>
 
 
 
 
              <section class='block-pics'>
-                <div>
-                <img src="{{asset('pictures/Jm_boxe.jpg')}}"  alt="Jm_home_pic" class='homePics'>
-                </div>
+                 
                 
+                
+                <div>
+                <img src="{{asset('pictures/JM_cross.jpg')}}"  alt="Jm_home_pic" class='homePics'>
+                </div>  
+
+                <div>
+                <img src="{{asset('pictures/JM_CFA_2015.jpg')}}"  alt="Jm_home_pic" class='homePics-d'>
+                </div>  
+
+                             
              </section>
           </main>
           {% endblock %}
-          
+          </section>
             {% for cat,list in app.flashes %}
                 {% for message in list %}
                   <div class="flash flash-{{cat}}"> {{message}} </div>

@@ -14,14 +14,21 @@
 
 
 {% block body %}
+        <div class="block">
+
+                {% if is_granted('ROLE_ADMIN') %}
+                <ul>
+                <li><button class='classic-btn'><a href=" {{path('app_calendar_index')}} ">Crée un camp</a></button></li>
+                </ul>
+                {% endif %}
 
 
 
-        <div id="calendrier"></div>
+                <div id="calendrier"></div>
 
 
 
-
+        </div>
 {% endblock %}
 
 

@@ -4,43 +4,41 @@
             <a href=" {{asset('/')}} "><img class='logo' src=" {{ asset('pictures/LOGO_J.png') }} "></a>   
             <div class='nav-list'>
                     <ul class='nav-content'>
-                        <li>    
                         
+                        <li>    
                         <a class='nav-elem' href=" {{path('homepage')}} ">
                         <i class="fa-solid fa-house pr-5">
                         </i>Homepage</a>    
-                        
                         </li>
 
-                        <li class='p-20'>   
-                        
+                        <li>   
                         <a class='nav-elem' href=" {{path('planning')}} ">
                         <i class="fa-solid fa-calendar pr-5"></i> 
                         Planning</a>    
-                        
                         </li>
 
-                        <li class='p-20'>   
-                        
+                        <li>   
                         <a class='nav-elem' href=" {{path('actuality')}} ">
                         <i class="fa-solid fa-book-open pr-5"></i>
                         Actualité</a>   
                         </li>
+
                     </ul>
             </div>
-            <div class="log-reg">
+
+            <div class="block">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                      <button class="nav-button">
+                      <button class="classic-btn bckColor-red">
                     <a href=" {{path("logout_")}} ">Deconnexion</a>
                     </button>
-                    <button class="nav-button">
+                    <button class="classic-btn bckColor-yellow">
                     <a href=" {{path("profil_")}} ">Votre compte</a>
                     </button>
                     {% else %}        
-                    <button class="nav-button">
+                    <button class="classic-btn bckColor-red">
                     <a href="{{path("inscription_")}} ">Inscription</a>
                     </button>
-                    <button class="nav-button">
+                    <button class="classic-btn bckColor-yellow">
                     <a href=" {{path("connexion_")}} ">Connexion</a>
                     </button>  
                 {% endif %}
