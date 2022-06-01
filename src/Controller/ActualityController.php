@@ -37,6 +37,7 @@ class ActualityController extends AbstractController
             $em->persist($todo);
             $em->flush();
             $this->redirectToRoute('actuality');
+            $this->addFlash('succed', 'Votre article à bien été crée.');
         }
        
        return $this->render('view/todoArticle/_createArticle.html.twig', [

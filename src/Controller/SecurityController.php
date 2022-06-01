@@ -8,7 +8,9 @@ use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
@@ -20,7 +22,7 @@ class SecurityController extends AbstractController
     #[Route('/inscription', name: 'inscription_')]
     public function inscription(Request $request, EntityManagerInterface $em, UserPasswordHasherInterface $passwordHasher): Response
     {
-
+        
         $user = new UserProfil;
 
         $userForm = $this->createForm(UserProfilType::class, $user);
@@ -30,7 +32,11 @@ class SecurityController extends AbstractController
             $user->setPassword($passwordHasher->hashPassword($user, $user->getPassword()));
             $em->persist($user);
             $em->flush();
+            $this->addFlash('succed','Votre inscription à bien été prise en compte merci.');
             $this->redirectToRoute('homepage');
+        } else {
+            $this->addFlash('error', 'Nous avons rencontrer une erreur dans le transfère de donnée, veuillez vérifier vos informations.');
+
         }
 
 
