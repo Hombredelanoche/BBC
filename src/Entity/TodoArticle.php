@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\TodoArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: TodoArticleRepository::class)]
 class TodoArticle
@@ -14,12 +15,15 @@ class TodoArticle
     private $id;
 
     #[ORM\Column(type: 'string', length: 150)]
+    #[Assert\NotBlank(message: 'Veuillez renseigner un titre.')]
+    #[Assert\Length(max: 150, maxMessage: 'Votre titre est trop long !')]
     private $title;
 
     #[ORM\Column(type: 'date')]
     private $date;
 
     #[ORM\Column(type: 'text')]
+    #[Assert\NotBlank(message: 'Ce champs doit être rempli')]
     private $content;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]

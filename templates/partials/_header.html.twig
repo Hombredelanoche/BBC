@@ -28,17 +28,17 @@
 
             <div class="block">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                      <button class="classic-btn bckColor-red">
+                      <button class="classic-btn bckColor-red color-w">
                     <a href=" {{path("logout_")}} ">Deconnexion</a>
                     </button>
-                    <button class="classic-btn bckColor-yellow">
+                    <button class="classic-btn bckColor-yellow color-b">
                     <a href=" {{path("profil_")}} ">Votre compte</a>
                     </button>
                     {% else %}        
-                    <button class="classic-btn bckColor-red">
+                    <button class="classic-btn bckColor-red color-w">
                     <a href="{{path("inscription_")}} ">Inscription</a>
                     </button>
-                    <button class="classic-btn bckColor-yellow">
+                    <button class="classic-btn bckColor-yellow color-b">
                     <a href=" {{path("connexion_")}} ">Connexion</a>
                     </button>  
                 {% endif %}

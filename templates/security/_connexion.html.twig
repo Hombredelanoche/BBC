@@ -1,21 +1,29 @@
 {% extends "base.html.twig" %}
 
 
-{% block title %}| Connexion{% endblock %}
+{% block title %} Connexion{% endblock %}
 
-{% block stylesheets %}
-<link rel="stylesheet" href=" {{asset('css/enregistrement&connexion')}} ">
-{% endblock %}
 
 
 {% block body %}
 
+
+        <div class="block-flex-colum">
+            <div class="block-flex-colum">
+            <div>
+                    <h1>Se connecter</h1>
+            </div>
+        <div class="block-form">
+
+
+<main class='blockF'>
+
+<form action=" {{path('connexion_')}}" class='formCo' method='POST'>
+
 {% if error %}
-    <div> {{error.messageKey|trans(error.messageData, 'security')}} </div>
+    <div class='red'> {{error.messageKey|trans(error.messageData, 'security')}} </div>
 {% endif %}
 
-
-<form action=" {{path('connexion_')}} " method='POST'>
 <div>
 <label for="email">Email</label>
 <input type="text" id='email' name='_username' value=' {{username}} '>
@@ -27,13 +35,16 @@
 </div>
 <div>
 <label>
-    <input type="checkbox" name="_remember_me"> Se souvenir de moi.
+    <input type="checkbox" name="_remember_me" id='checkbox'> Se souvenir de moi.
 </label>
 <div>
 <input type="hidden" nom='_csrf_token' value=' {{csrf_token('authenticate')}} '>
 </div>
 </div>
-<button>Connexion</button>
+<button class='spe-btn'>Connexion</button>
 </form>
 
+</div>
+</main>
+</section>
 {% endblock %}

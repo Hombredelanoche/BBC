@@ -80,6 +80,18 @@ footer {
     background-color: var(--warning);
 }
 
+.red {
+    color: var(--warning);
+}
+
+.color-w {
+    color: var(--color);
+}
+
+.color-b {
+    color: var(--primary);
+}
+
 .classic-btn {
     margin: 10px;
     width: 140px;
@@ -186,3 +198,94 @@ header nav {
     margin-top: 80px;
 }
 
+/* Inscription & Connexion */
+
+.global {
+    display: flex;
+    background-color: var(--primary);
+}
+.blockF {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+}
+.block-flex-colum div h1{
+    display: flex;
+    justify-content: center;
+    border-bottom: var(--secondary) 4px solid;
+}
+
+.block-form form {
+    display: flex;
+    flex-direction: column;
+    width: 990px;
+    height: 990px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--box-shadow);
+    margin: 50px;
+}
+
+.block-form form div {
+    display: contents;
+}
+
+.block-form form label {
+    margin: 5px;
+}
+
+.block-form form div input {
+    border-radius: var(--border-radius);
+    border: var(--border);
+    background-color: var(--gray-dark);
+    width: 300px;
+    height: 50px;
+    font-size: 18px;
+}
+
+#user_profil_birthday {
+    display: flex;
+}
+
+#user_profil_birthday select {
+    background-color: var(--gray-dark);
+    width: 75px;
+}
+
+#user_profil_country {
+    background-color: var(--gray-dark);
+    width: 300px;
+    height: 50px;
+}
+
+#user_profil_gender {
+    background-color: var(--gray-dark);
+    width: 300px;
+    height: 50px;
+}
+
+.spe-btn {
+    margin: 25px;
+    height: 50px;
+    width: 125px;
+    background-color: var(--secondary);
+    color: var(--primary);
+    border: var(--border);
+}
+
+.spe-btn:hover {
+    transition: 0.3s;
+    background-color: var(--warning);
+    color: var(--color);
+}
+
+.lign {
+    margin-bottom: 50px;
+}
+
+#checkbox {
+    width: 15px;
+    height: 15px;
+    align-items: center;
+}

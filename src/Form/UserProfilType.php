@@ -39,10 +39,10 @@ class UserProfilType extends AbstractType
             ->add('gender', ChoiceType::class, [
                 'label' => 'Votre genre',
                 'choices' => [
-                    'genre',
                     'Homme' => 'Homme',
                     'Femme' => 'Femme',
                 ],
+                'placeholder' => 'Choissiez votre sexe'
             ])
             ->add('country', CountryType::class, [
                 'label' => 'Pays'

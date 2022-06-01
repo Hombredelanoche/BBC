@@ -8,6 +8,8 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\Validator\Constraints as SecurityAssert;
 
 #[ORM\Entity(repositoryClass: UserProfilRepository::class)]
 class UserProfil implements UserInterface, PasswordAuthenticatedUserInterface
@@ -18,36 +20,49 @@ class UserProfil implements UserInterface, PasswordAuthenticatedUserInterface
     private $id;
 
     #[ORM\Column(type: 'string', length: 180, unique: true)]
+    #[Assert\NotBlank(message: 'Veuillez remplir ce champs', groups:['form'])]
+    #[Assert\Email(message: "L'adresse mail {{ value }} n'est pas valide, veuillez essayer à nouveau.", groups:['form'])]
     private $email;
 
     #[ORM\Column(type: 'json')]
     private $roles = [];
 
     #[ORM\Column(type: 'string')]
+    #[Assert\NotBlank(message: 'Veuillez remplir ce champs', groups:['form'])]
+    #[SecurityAssert\UserPassword(message: 'Le mot de passe est incorrect.', groups:['form'])]
+    #[Assert\Length(min: '5', minMessage: 'Votre mot de passe est trop court.', groups:['form'])]
     private $password;
 
     #[ORM\Column(type: 'string', length: 100)]
+    #[Assert\NotBlank(message: 'Veuillez remplir ce champs', groups:['form'])]
     private $name;
 
     #[ORM\Column(type: 'string', length: 100)]
+    #[Assert\NotBlank(message: 'Veuillez remplir ce champs', groups:['form'])]
     private $firstname;
 
     #[ORM\Column(type: 'date')]
+    #[Assert\NotBlank(message: 'Veuillez mettre votre date de naissance.', groups:['form'])]
     private $birthday;
 
     #[ORM\Column(type: 'string', length: 25)]
+    #[Assert\NotBlank(message: 'Veuillez remplir choisir votre sexe.', groups:['form'])]
     private $gender;
 
     #[ORM\Column(type: 'string', length: 100)]
+    #[Assert\NotBlank(message: 'Veuillez selectionner votre pays.', groups:['form'])]
     private $country;
 
     #[ORM\Column(type: 'string', length: 75)]
+    #[Assert\NotBlank(message: 'Veuillez remplir ce champs.', groups:['form'])]
     private $city;
 
     #[ORM\Column(type: 'string', length: 10)]
+    #[Assert\NotBlank(message: 'Veuillez remplir ce champs.', groups:['form'])]
     private $postalCode;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[Assert\NotBlank(message: 'Veuillez inserer une photo.', groups:['form'])]
     private $picture;
 
     #[ORM\OneToMany(mappedBy: 'author', targetEntity: TodoArticle::class)]

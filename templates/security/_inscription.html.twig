@@ -1,27 +1,27 @@
 {% extends 'base.html.twig' %}
 
 
-{% block title %}| S'enregistrer{% endblock %}
+{% block title %} S'enregistrer{% endblock %}
 
-{% block stylesheets %}
-{{parent()}}
-<link rel="stylesheet" href=" {{asset('css/regist&log.css')}} ">
-{% endblock %}
 
 
 {% block body %}
-<section class='form-block'>
-    <article class='form-container'>
-            <h1>Inscription</h1>
-                <div class='container'>
+<section='global'>
+<main class='blockF'>
+        <div class="block-flex-colum">
+            <div>
+                    <h1>S'inscrire</h1>
+            </div>
+            <div class="block-form">
                     {{form_start(form)}}
 
+                        {{form_rest(form)}}
+                    
 
-                    {{form_rest(form)}}
-
-                    <button>S'inscrire</button>
+                        <button class='spe-btn'>S'inscrire</button>
                     {{form_end(form)}}
-                </div>
-    </article>
+            </div>
+    </div>
+</main>
 </section>
 {% endblock %}
