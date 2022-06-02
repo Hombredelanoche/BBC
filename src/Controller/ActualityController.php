@@ -36,8 +36,9 @@ class ActualityController extends AbstractController
             $todo->setDate(new \DateTimeImmutable());
             $em->persist($todo);
             $em->flush();
-            $this->redirectToRoute('actuality');
+            
             $this->addFlash('succed', 'Votre article à bien été crée.');
+            $this->redirectToRoute('actuality');
         }
        
        return $this->render('view/todoArticle/_createArticle.html.twig', [

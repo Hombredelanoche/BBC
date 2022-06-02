@@ -214,6 +214,8 @@ header nav {
     display: flex;
     justify-content: center;
     border-bottom: var(--secondary) 4px solid;
+    width: 350px;
+    margin: auto;
 }
 
 .block-form form {
@@ -272,6 +274,7 @@ header nav {
     background-color: var(--secondary);
     color: var(--primary);
     border: var(--border);
+    border-radius: var(--border-radius);
 }
 
 .spe-btn:hover {
@@ -288,4 +291,35 @@ header nav {
     width: 15px;
     height: 15px;
     align-items: center;
+}
+
+
+/* MESSAGE FLASH */
+
+.flash-succed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-dark);
+    color: var(--color);
+    border-top-right-radius: 3%;
+    border-top-left-radius: 3%;
+    width: 250px;
+    height: 25px;
+    margin: auto;
+    font-weight: bold;
+}
+
+.flash-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary);
+    color: var(--dark);
+    border-top-right-radius: 3%;
+    border-top-left-radius: 3%;
+    height: 25px;
+    margin: auto;
+    font-weight: bold;
+    animation-timeline: 5s;
 }

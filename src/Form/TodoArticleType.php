@@ -23,7 +23,8 @@ class TodoArticleType extends AbstractType
                 'label' => "Contenu de l'article."
             ])
             ->add('pictures', FileType::class, [
-                'label' => 'Ajoutez des photos.'
+                'label' => 'Ajoutez des photos.',
+                'required' => false
             ])
             ->add('author')
         ;

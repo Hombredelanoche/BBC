@@ -34,9 +34,6 @@ class SecurityController extends AbstractController
             $em->flush();
             $this->addFlash('succed','Votre inscription à bien été prise en compte merci.');
             $this->redirectToRoute('homepage');
-        } else {
-            $this->addFlash('error', 'Nous avons rencontrer une erreur dans le transfère de donnée, veuillez vérifier vos informations.');
-
         }
 
 
@@ -51,6 +48,7 @@ class SecurityController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         $username = $authenticationUtils->getLastUsername();
         $this->redirectToRoute('homepage');
+        $this->addFlash('succed', 'Vous êtes connecter.');
        
 
         return $this->render('security/_connexion.html.twig', [
