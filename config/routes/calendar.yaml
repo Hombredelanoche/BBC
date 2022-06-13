@@ -1,0 +1,3 @@
+#config/route/calendar.yaml
+calendar:
+    resource: '@calendarCalendarBundle/Resources/config/routing.yaml'

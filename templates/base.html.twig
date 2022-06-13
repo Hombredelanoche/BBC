@@ -23,17 +23,13 @@
     {% block stylesheets %}{% endblock %}
   </head>
   <body>
-
   {% block navBar %}
     {% include 'partials/_header.html.twig' %}
   {% endblock %}
-
 {% block extraNavBar %}{% endblock %}
         
           {% block body %}
-
           <main class='block'>
-
              <section class='motivation-content'>
                 <div class='motivation-text ft-40'>Courage</div>
                 <div class='motivation-text ft-40'>Combativité</div>
@@ -44,56 +40,40 @@
             <section class='motivation-content'>
                 <h1>Présentation</h1>
                     <div class='motivation-text'>
-                    
+    
                       <p>  Ayant connu la boxe anglaise dit « Le Noble Art » à mon adolescence. Une passion est née et ma première année fut concluante :</p>
- <p> -	2009 3eme place des championnats de France Précombat.</p>
-
- <p> Cela fut le début de ma longue aventure dans le milieu du Noble Art ! </p>
-<p> -	2013 Participation aux Ceintures Montana (Compétition regroupant plus de 10 pays) ou j’ai pu arriver en demi-finale face à des boxeurs expérimentés et j’en suis ressortis plus aguerris.</p>
-<p> -	2014 Champion de France amateur senior catégorie -49kg</p>
-<p> Suite à mon titre, j’ai pu intégrer l’Equipe de France ou j’ai effectué plusieurs combats l’étranger et rejoindre l’INSEP (L'Institut national du sport, de l'expertise et de la performance).</p>
-<p> -	2015 Vice-Champion de France amateur senior catégorie -49kg</p>
-<p> -	2016 Blessure au tendon d’Achille.</p>
-<p> Après cette blessure j’ai pu effectuer quelques combats amateurs avant de passer PRO ou j’ai effectué mon premier combat en 2020.</p>
-<p> Mais suite à une blessure que je traine depuis 2014 à l’œil (Ulcère) j’ai dû prendre la décision de mettre fin à ma carrière de boxeur pour me consacrer à ma nouvelle profession celle d’entraineur spécialité Boxe Anglaise.</p>
-<p> -	2020 DEJEPS mention « boxe »</p>
-<p> -	2021/2022 BTS nutritionniste </p>
- Aujourd'hui diplômé d'un DEJEPS et devenu coach sportif spécialisé dans la boxe anglaise. J'enseigne dans différente structures et pour tous les niveaux.
-                        Mon objectif étant de partager mes connaissances techniques, tactiques, physiques afin de vous faire progrésser à travers un suivis rigoureux et continue.
+                      <p> -	2009 3eme place des championnats de France Précombat.</p>
+                      <p> Cela fut le début de ma longue aventure dans le milieu du Noble Art ! </p>
+                      <p> -	2013 Participation aux Ceintures Montana (Compétition regroupant plus de 10 pays) ou j’ai pu arriver en demi-finale face à des boxeurs expérimentés et j’en suis ressortis plus aguerris.</p>
+                      <p> -	2014 Champion de France amateur senior catégorie -49kg</p>
+                      <p> Suite à mon titre, j’ai pu intégrer l’Equipe de France ou j’ai effectué plusieurs combats l’étranger et rejoindre l’INSEP (L'Institut national du sport, de l'expertise et de la performance).</p>
+                      <p> -	2015 Vice-Champion de France amateur senior catégorie -49kg</p>
+                      <p> -	2016 Blessure au tendon d’Achille.</p>
+                      <p> Après cette blessure j’ai pu effectuer quelques combats amateurs avant de passer PRO ou j’ai effectué mon premier combat en 2020.</p>
+                      <p> Mais suite à une blessure que je traine depuis 2014 à l’œil (Ulcère) j’ai dû prendre la décision de mettre fin à ma carrière de boxeur pour me consacrer à ma nouvelle profession celle d’entraineur spécialité Boxe Anglaise.</p>
+                      <p> -	2020 DEJEPS mention « boxe »</p>
+                      <p> -	2021/2022 BTS nutritionniste </p>
+                      <p> Aujourd'hui diplômé d'un DEJEPS et devenu coach sportif spécialisé dans la boxe anglaise. J'enseigne dans différente structures et pour tous les niveaux.
+                        Mon objectif étant de partager mes connaissances techniques, tactiques, physiques afin de vous faire progrésser à travers un suivis rigoureux et continue.</p>
 
                     </div>          
             </section>
-
-
-
-
-             <section class='block-pics'>
-                 
-                
-                
+             <section class='block-pics'>   
                 <div>
                 <img src="{{asset('pictures/JM_cross.jpg')}}"  alt="Jm_home_pic" class='homePics'>
                 </div>  
 
                 <div>
                 <img src="{{asset('pictures/JM_CFA_2015.jpg')}}"  alt="Jm_home_pic" class='homePics-d'>
-                </div>  
-
-                             
+                </div>                  
              </section>
           </main>
-     
           {% endblock %}
-         
             {% for cat,list in app.flashes %}
                 {% for message in list %}
                   <div class="flash flash-{{cat}}"> {{message}} </div>
                 {% endfor %}
             {% endfor %}
         {% include 'partials/_footer.html.twig' %}
-
-
-
-
   </body>
 </html>

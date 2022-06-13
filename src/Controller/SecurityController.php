@@ -8,9 +8,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
@@ -32,7 +30,7 @@ class SecurityController extends AbstractController
             $user->setPassword($passwordHasher->hashPassword($user, $user->getPassword()));
             $em->persist($user);
             $em->flush();
-            $this->addFlash('succed','Votre inscription à bien été prise en compte merci.');
+            $this->addFlash('succed','Register done.');
             $this->redirectToRoute('homepage');
         }
 
@@ -45,13 +43,15 @@ class SecurityController extends AbstractController
     #[Route('/connexion', name: 'connexion_')]
     public function connexion(AuthenticationUtils $authenticationUtils): Response
     {
+        // Récupérer une erreur s'il y en a une
         $error = $authenticationUtils->getLastAuthenticationError();
+        // Dernier username entrer par l'utilisateur
         $username = $authenticationUtils->getLastUsername();
         $this->redirectToRoute('homepage');
-        $this->addFlash('succed', 'Vous êtes connecter.');
        
 
         return $this->render('security/_connexion.html.twig', [
+            'controller_name' => 'LoginController',
             'error' => $error,
             'username' =>$username
         ]);
